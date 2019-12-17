@@ -5,6 +5,7 @@ import android.arch.lifecycle.MutableLiveData;
 
 import com.example.mvvmdemo.Interface.PostsService;
 import com.example.mvvmdemo.Model.Posts;
+import com.example.mvvmdemo.Model.User;
 
 import java.util.List;
 
@@ -36,5 +37,7 @@ public class PostsRepository {
         });
         return postsMutableLiveData;
     }
+
+
 
 }

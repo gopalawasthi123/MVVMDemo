@@ -16,8 +16,11 @@ import android.view.MenuItem;
 
 import com.example.mvvmdemo.Adapters.MyDataAdapter;
 import com.example.mvvmdemo.Model.Posts;
+import com.example.mvvmdemo.Model.User;
 import com.example.mvvmdemo.R;
 import com.example.mvvmdemo.ViewModel.PostsViewModel;
+import com.example.mvvmdemo.ViewModel.UserViewModel;
+import com.example.mvvmdemo.di.Component.ApplicationComponent;
 
 import java.util.List;
 
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private PostsViewModel model;
     private RecyclerView.LayoutManager layoutManager;
     private MyDataAdapter adapter;
+    private UserViewModel usermodel;
 
 
     @Override
@@ -48,18 +52,33 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerview);
 
         model = ViewModelProviders.of(this).get(PostsViewModel.class);
-        model.getPosts().observe(this, new Observer<List<Posts>>() {
+//        model.getPosts().observe(this, new Observer<List<Posts>>() {
+//            @Override
+//            public void onChanged(@Nullable List<Posts> posts) {
+//                prepareRecyclerView(posts);
+//            }
+//        });
+
+        usermodel = ViewModelProviders.of(this).get(UserViewModel.class);
+        usermodel.getUsers().observe(this, new Observer<List<User>>() {
             @Override
-            public void onChanged(@Nullable List<Posts> posts) {
-                prepareRecyclerView(posts);
+            public void onChanged(@Nullable List<User> users) {
+                prepareRecyclerView(users);
             }
         });
-
     }
 
-    private void prepareRecyclerView(List<Posts> posts) {
+//    private void prepareRecyclerView(List<Posts> posts) {
+//        layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+//        adapter = new MyDataAdapter(this,posts);
+//        recyclerView.setAdapter(adapter);
+//        recyclerView.setLayoutManager(layoutManager);
+//
+//    }
+
+    private void prepareRecyclerView(List<User> users) {
         layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-        adapter = new MyDataAdapter(this,posts);
+        adapter = new MyDataAdapter(this,users);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
 
