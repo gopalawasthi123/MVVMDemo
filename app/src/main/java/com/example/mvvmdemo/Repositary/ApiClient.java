@@ -1,7 +1,6 @@
 package com.example.mvvmdemo.Repositary;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.mvvmdemo.Interface.PostsService;
 import com.example.mvvmdemo.Model.Posts;
@@ -74,6 +73,7 @@ public class ApiClient {
         }
 
         // getting the users from the api json place holder api
+
 
     public MutableLiveData<List<User>> getUsers(){
         final MutableLiveData<List<User>> userMutableLiveData = new MutableLiveData<>();
