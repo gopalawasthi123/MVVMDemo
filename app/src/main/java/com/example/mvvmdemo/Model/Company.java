@@ -3,6 +3,7 @@ package com.example.mvvmdemo.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+
 public class Company {
 
     @SerializedName("name")

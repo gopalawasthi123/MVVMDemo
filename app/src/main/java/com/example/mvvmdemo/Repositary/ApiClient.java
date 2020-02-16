@@ -2,7 +2,7 @@ package com.example.mvvmdemo.Repositary;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.mvvmdemo.Interface.PostsService;
+import com.example.mvvmdemo.data.Repository.UserApiService;
 import com.example.mvvmdemo.Model.Posts;
 import com.example.mvvmdemo.Model.User;
 import com.google.gson.Gson;
@@ -19,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
     private static ApiClient apiClient;
 
-    private PostsService service;
+    private UserApiService service;
 
     private  ApiClient() {
         Gson gson  = new GsonBuilder()
@@ -31,7 +31,7 @@ public class ApiClient {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        service = retrofit.create(PostsService.class);
+        service = retrofit.create(UserApiService.class);
     }
 
     public  static ApiClient GetINSTANCE(){
@@ -41,7 +41,7 @@ public class ApiClient {
         return  apiClient;
     }
 
-    public  PostsService  getPostsInstance(){
+    public UserApiService getPostsInstance(){
 
         return  service;
     }

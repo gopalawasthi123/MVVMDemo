@@ -1,18 +1,20 @@
-package com.example.mvvmdemo.Interface;
+package com.example.mvvmdemo.data.Repository;
 
 import com.example.mvvmdemo.Model.Posts;
 import com.example.mvvmdemo.Model.User;
 
 import java.util.List;
 
+
+import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface PostsService {
+public interface UserApiService {
 
     @GET("posts")
-     Call<List<Posts>> getPosts();
+    Observable<Posts> getPosts();
 
     @GET("users")
-    Call<List<User>> getUsers();
+    Observable<User> getUsers();
 }

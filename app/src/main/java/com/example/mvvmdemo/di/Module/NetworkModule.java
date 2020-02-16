@@ -1,20 +1,14 @@
 package com.example.mvvmdemo.di.Module;
 
 import com.example.mvvmdemo.AppConstants;
-import com.example.mvvmdemo.Interface.PostsService;
-import com.example.mvvmdemo.Model.Posts;
-import com.example.mvvmdemo.Repositary.ApiClient;
+import com.example.mvvmdemo.data.Repository.UserApiService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import okhttp3.Cache;
-import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -42,8 +36,8 @@ public class NetworkModule {
 
     @Singleton
     @Provides
-    static PostsService provideRetrofitService(Retrofit retrofit){
-        return retrofit.create(PostsService.class);
+    static UserApiService provideRetrofitService(Retrofit retrofit){
+        return retrofit.create(UserApiService.class);
     }
 
 
