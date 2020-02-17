@@ -15,11 +15,14 @@ import com.example.mvvmdemo.data.dao.UsersDao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Singleton;
+
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.Scheduler;
 import io.reactivex.schedulers.Schedulers;
 
+@Singleton
 public class UserRepository {
 
     private UsersDao dao;

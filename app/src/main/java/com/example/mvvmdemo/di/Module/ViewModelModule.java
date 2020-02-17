@@ -8,8 +8,10 @@ import com.example.mvvmdemo.ViewModel.UserViewModel;
 import com.example.mvvmdemo.factory.ViewModelFactory;
 
 import dagger.Binds;
+import dagger.Module;
 import dagger.multibindings.IntoMap;
 
+@Module
 public abstract class ViewModelModule {
 
     @Binds

@@ -14,6 +14,8 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public static volatile AppDatabase INSTANCE;
 
+    public abstract UsersDao usersDao();
+
 
     public static AppDatabase getInstance(Context context){
         if(INSTANCE == null){
@@ -23,5 +25,4 @@ public abstract class AppDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
-    abstract UsersDao getuserDao();
 }

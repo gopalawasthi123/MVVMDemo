@@ -20,7 +20,7 @@ public class PostsViewModel  extends ViewModel {
 
    public LiveData<List<Posts>> getPosts() {
 
-       posts = ApiClient.GetINSTANCE().getPosts();
+       //posts = ApiClient.GetINSTANCE().getPosts();
     return  posts;
    }
 }

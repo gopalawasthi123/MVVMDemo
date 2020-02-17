@@ -22,18 +22,12 @@ public class User {
     @SerializedName("email")
     @Expose
     private String email;
-    @SerializedName("address")
-    @Expose
-    private Address address;
     @SerializedName("phone")
     @Expose
     private String phone;
     @SerializedName("website")
     @Expose
     private String website;
-    @SerializedName("company")
-    @Expose
-    private Company company;
 
     public Integer getId() {
         return id;
@@ -67,14 +61,6 @@ public class User {
         this.email = email;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -91,12 +77,5 @@ public class User {
         this.website = website;
     }
 
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
 
 }

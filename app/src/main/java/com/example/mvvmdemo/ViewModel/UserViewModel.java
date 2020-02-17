@@ -19,6 +19,7 @@ public class UserViewModel extends ViewModel {
     private MutableLiveData<List<User>> mutableLiveData = new MutableLiveData<>();
 
     private UserRepository userRepository;
+
     @Inject
     public UserViewModel(UsersDao usersDao , UserApiService apiService){
         userRepository = new UserRepository(usersDao,apiService);

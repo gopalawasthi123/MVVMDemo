@@ -21,10 +21,13 @@ import com.example.mvvmdemo.R;
 import com.example.mvvmdemo.ViewModel.PostsViewModel;
 import com.example.mvvmdemo.ViewModel.UserViewModel;
 import com.example.mvvmdemo.di.Component.ApplicationComponent;
+import com.example.mvvmdemo.factory.ViewModelFactory;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     private MyDataAdapter adapter;
     private UserViewModel usermodel;
 
+    @Inject
+    ViewModelFactory viewModelFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        usermodel = ViewModelProviders.of(this).get(UserViewModel.class);
+        usermodel = ViewModelProviders.of(this,viewModelFactory).get(UserViewModel.class);
         usermodel.getUsers().observe(this, new Observer<List<User>>() {
             @Override
             public void onChanged(@Nullable List<User> users) {

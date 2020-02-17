@@ -49,48 +49,48 @@ public class ApiClient {
 
     // getting the posts from the json place holders api
 
-
-        public MutableLiveData<List<Posts>> getPosts(){
-            //   final MutableLiveData<List<Posts>> postsMutableLiveData =new MutableLiveData<>();
-            final MutableLiveData<List<Posts>> postsMutableLiveData =new MutableLiveData<>();
-
-
-            service.getPosts().enqueue(new Callback<List<Posts>>() {
-                @Override
-                public void onResponse(Call<List<Posts>> call, Response<List<Posts>> response) {
-                    postsMutableLiveData.setValue(response.body());
-
-                }
-
-                @Override
-                public void onFailure(Call<List<Posts>> call, Throwable t) {
-
-                }
-
-
-            });
-            return postsMutableLiveData;
-        }
-
-        // getting the users from the api json place holder api
-
-
-    public MutableLiveData<List<User>> getUsers(){
-        final MutableLiveData<List<User>> userMutableLiveData = new MutableLiveData<>();
-        service.getUsers().enqueue(new Callback<List<User>>() {
-            @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-
-                userMutableLiveData.setValue(response.body());
-            }
-
-            @Override
-            public void onFailure(Call<List<User>> call, Throwable t) {
-
-            }
-        });
-        return userMutableLiveData;
-    }
+//
+//        public MutableLiveData<List<Posts>> getPosts(){
+//            //   final MutableLiveData<List<Posts>> postsMutableLiveData =new MutableLiveData<>();
+//            final MutableLiveData<List<Posts>> postsMutableLiveData =new MutableLiveData<>();
+//
+//
+//            service.getPosts().enqueue(new Callback<List<Posts>>() {
+//                @Override
+//                public void onResponse(Call<List<Posts>> call, Response<List<Posts>> response) {
+//                    postsMutableLiveData.setValue(response.body());
+//
+//                }
+//
+//                @Override
+//                public void onFailure(Call<List<Posts>> call, Throwable t) {
+//
+//                }
+//
+//
+//            });
+//            return postsMutableLiveData;
+//        }
+//
+//        // getting the users from the api json place holder api
+//
+//
+//    public MutableLiveData<List<User>> getUsers(){
+//        final MutableLiveData<List<User>> userMutableLiveData = new MutableLiveData<>();
+//        service.getUsers().enqueue(new Callback<List<User>>() {
+//            @Override
+//            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+//
+//                userMutableLiveData.setValue(response.body());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<User>> call, Throwable t) {
+//
+//            }
+//        });
+//        return userMutableLiveData;
+//    }
 
 
     }
